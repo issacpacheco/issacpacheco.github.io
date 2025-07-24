@@ -1,0 +1,683 @@
+﻿/* Importar la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variables para la paleta de colores (solo rosa) */
+:root {
+    --primary-color: #D30559;
+    /* Rosa principal vibrante */
+    --light-bg: #F8F9FA;
+    /* Fondo muy claro, casi blanco */
+    --card-bg: #FFFFFF;
+    /* Fondo de tarjetas blanco puro */
+    --text-color-dark: #333333;
+    /* Texto oscuro para buena legibilidad */
+    --text-color-light: #FFFFFF;
+    /* Texto blanco para contraste en fondos oscuros */
+    --border-color-light: #EEEEEE;
+    /* Borde muy sutil */
+    --border-color-medium: #DDDDDD;
+    /* Borde un poco más visible */
+
+    /* Tonos derivados del rosa principal para categorías y acentos sutiles */
+    --category-esencial-bg: #FDDDE6;
+    /* Rosa muy claro */
+    --category-emprendedor-bg: #FBBCD5;
+    /* Rosa medio claro */
+    --category-pyme-bg: #F68FAB;
+    /* Rosa un poco más oscuro */
+    --slider-track-color: #F8B3C9;
+    /* Un rosa más claro para el track del slider */
+}
+
+/* Estilos Generales y Reseteo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Empuja el footer hacia abajo */
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 2rem 0 0;
+    /* Ajuste el padding-bottom para que el carrusel ocupe hasta abajo del header */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Eliminar el margen inferior del header si el carrusel va a pegarse a lo de abajo */
+    margin-bottom: 0;
+    overflow: hidden;
+    /* Asegura que el carrusel con bordes redondeados no se salga */
+    border-radius: 0 0 20px 20px;
+    /* Bordes redondeados solo en la parte inferior del header */
+}
+
+.logo-container {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    /* Añadir padding horizontal para el logo si es necesario */
+}
+
+.envios-pro-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-color-light);
+    /* Títulos del header en blanco */
+}
+
+.main-container h2 {
+    color: var(--primary-color);
+    /* Títulos de secciones en el main en rosa */
+}
+
+.container {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    /* Ajuste el margen superior si el header es más grande */
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Sección del Simulador / Calculadora */
+.calculator-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid var(--border-color-medium);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.8rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
+    font-size: 1.1rem;
+}
+
+/* Estilos para Radio Buttons de Peso */
+.radio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.radio-buttons input[type="radio"] {
+    display: none;
+}
+
+.radio-buttons label {
+    display: inline-block;
+    background-color: var(--light-bg);
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color-light);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    min-width: 100px;
+    color: var(--text-color-dark);
+}
+
+.radio-buttons input[type="radio"]:checked+label {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.radio-buttons label:hover:not(.radio-buttons input[type="radio"]:checked + label) {
+    background-color: var(--border-color-light);
+}
+
+
+/* Estilos de Slider de Cantidad */
+input[type="range"] {
+    width: 100%;
+    height: 12px;
+    background: var(--slider-track-color);
+    border-radius: 6px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: grab;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: -8px;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: grab;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.current-quantity-display,
+.cost-per-shipment {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0.8rem;
+    font-weight: 500;
+}
+
+.current-quantity-display span,
+.cost-per-shipment span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.category-feedback {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+#category-name {
+    font-size: 1.8em;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    color: var(--text-color-dark);
+}
+
+/* Colores para las categorías (ahora derivados del rosa principal) */
+.category-esencial {
+    background-color: var(--category-esencial-bg);
+}
+
+.category-emprendedor {
+    background-color: var(--category-emprendedor-bg);
+}
+
+.category-pyme {
+    background-color: var(--category-pyme-bg);
+}
+
+.results-panel {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px dashed var(--border-color-medium);
+    margin-top: 2rem;
+}
+
+.results-panel h3 {
+    color: var(--primary-color);
+}
+
+.total-estimated-cost {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0.8rem 0;
+    color: var(--primary-color);
+}
+
+.total-estimated-cost span {
+    font-size: 1em;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.cta-button:hover {
+    background-color: #A30449;
+    transform: translateY(-3px);
+}
+
+/* Sección de Animación del Camión */
+.animation-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--border-color-light);
+}
+
+.truck-animation-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    margin: 2rem auto;
+    background-color: #F8F8FF;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.envios-truck {
+    position: absolute;
+    bottom: 40px;
+    left: -200px;
+    width: 120px;
+    animation: moveTruck 15s linear infinite;
+    z-index: 10;
+}
+
+.road {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #6c757d;
+    border-top: 4px dashed white;
+    box-sizing: border-box;
+}
+
+.packages {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    height: 40px;
+}
+
+.package {
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    transform: rotate(15deg);
+    opacity: 0;
+    animation: collectPackage 15s linear infinite;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.package-1 {
+    animation-delay: 3s;
+    left: 20%;
+}
+
+.package-2 {
+    animation-delay: 8s;
+    left: 50%;
+}
+
+.package-3 {
+    animation-delay: 12s;
+    left: 80%;
+}
+
+
+@keyframes moveTruck {
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes collectPackage {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(15deg);
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(-30px) rotate(15deg);
+    }
+
+    8% {
+        opacity: 0;
+        transform: translateY(-50px) rotate(15deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0) rotate(15deg);
+    }
+}
+
+
+/* Sección de Carrusel - Integrada en el header y estilizada para ser más prominente */
+.carousel-section.header-carousel {
+    background-color: var(--primary-color);
+    /* Fondo igual al header para continuidad visual */
+    padding: 0 0;
+    /* Eliminar padding aquí para que el carrusel se ajuste directamente al header */
+    margin-top: 2rem;
+    /* Separación del título */
+    /* Eliminar box-shadow si quieres que se integre más con el header */
+    box-shadow: none;
+    border-radius: 0;
+    /* Eliminar bordes redondeados aquí para que el header los maneje */
+    overflow: hidden;
+    width: 100%;
+    /* Asegura que el carrusel ocupe todo el ancho disponible */
+}
+
+.carousel-section h2 {
+    display: none;
+    /* Ocultar el título "Ofertas y Promociones" si quieres que solo se vean las imágenes */
+}
+
+.carousel-container {
+    position: relative;
+    width: 90%;
+    /* Ajuste el ancho para que el carrusel en sí tenga un poco de margen */
+    max-width: 600px;
+    /* Un poco menos de max-width para el carrusel en sí */
+    margin: 0 auto;
+    /* Centrar el carrusel dentro del header */
+    overflow: hidden;
+    border-radius: 15px;
+    /* Bordes redondeados para el contenedor del carrusel */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada para el carrusel */
+    background-color: var(--card-bg);
+    /* Fondo blanco para las imágenes del carrusel */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    /* Pequeño padding interno para las imágenes */
+    text-align: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    /* Asegura que la imagen ocupe el 100% del slide */
+    height: auto;
+    /* Mantener la proporción */
+    max-height: 180px;
+    /* Limitar la altura para que no sea demasiado grande en móvil */
+    object-fit: contain;
+    border-radius: 10px;
+    /* Bordes redondeados para las imágenes */
+    border: none;
+    /* Eliminar el borde blanco si no es necesario */
+}
+
+.carousel-slide p {
+    display: none;
+    /* Ocultar el texto de cada slide */
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Botones más visibles */
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 20;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-nav:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
+}
+
+.carousel-nav.prev {
+    left: 10px;
+}
+
+.carousel-nav.next {
+    right: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .envios-pro-logo {
+        max-width: 150px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .carousel-nav {
+        padding: 0.6rem 1rem;
+        font-size: 1.2em;
+    }
+
+    .carousel-slide img {
+        height: auto;
+        /* Dejar que la altura se ajuste */
+        max-height: 150px;
+        /* Ajuste la altura máxima para tablets */
+    }
+
+    .input-group label {
+        font-size: 1rem;
+    }
+
+    .current-quantity-display,
+    .cost-per-shipment {
+        font-size: 1em;
+    }
+
+    #category-name {
+        font-size: 1.4em;
+        padding: 0.4rem 1rem;
+    }
+
+    .total-estimated-cost {
+        font-size: 1.8em;
+    }
+
+    .cta-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 1.1em;
+    }
+
+    .envios-truck {
+        width: 300px;
+        bottom: 35px;
+    }
+
+    .road {
+        height: 35px;
+    }
+
+    .package {
+        width: 20px;
+        height: 20px;
+    }
+
+    .truck-animation-container {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 0 0;
+    }
+
+    .envios-pro-logo {
+        max-width: 120px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .radio-buttons label {
+        padding: 0.6rem 1rem;
+        min-width: 80px;
+    }
+
+    input[type="range"] {
+        height: 10px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 24px;
+        height: 24px;
+        margin-top: -7px;
+    }
+
+    .current-quantity-display,
+    .cost-per-shipment {
+        font-size: 0.9em;
+    }
+
+    #category-name {
+        font-size: 1.2em;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .total-estimated-cost {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1em;
+    }
+
+    .carousel-slide img {
+        max-height: 100px;
+        /* Ajuste la altura máxima para móviles muy pequeños */
+    }
+
+    .carousel-nav {
+        padding: 0.5rem 0.8rem;
+        font-size: 1em;
+    }
+
+    .footer {
+        padding: 1rem;
+        font-size: 0.8em;
+    }
+
+    .truck-animation-container {
+        height: 120px;
+        /* Un poco más pequeña en pantallas muy chicas */
+    }
+
+    .envios-truck {
+        width: 80px;
+        bottom: 30px;
+    }
+
+    .road {
+        height: 30px;
+    }
+
+    .package {
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>Calcula tus Envíos y Ahorra con Envíos PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Envíos PRO Logo" class="envios-pro-logo">
+        </div>
+        <h1>Calcula tus Envíos y Ahorra</h1>
+
+        <section class="carousel-section header-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="img/1.png" alt="Promoción 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/2.png" alt="Promoción 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/3.png" alt="Promoción 3">
+                    </div>
+                </div>
+                <button class="carousel-nav prev">&lt;</button>
+                <button class="carousel-nav next">&gt;</button>
+            </div>
+        </section>
+    </header>
+
+    <main class="container">
+        <section class="calculator-section">
+            <div class="card">
+                <h2>Tu Cotización FedEx</h2>
+
+                <div class="input-group weight-selection">
+                    <label>Selecciona el Peso del Paquete:</label>
+                    <div class="radio-buttons">
+                        <input type="radio" id="weight5kg" name="packageWeight" value="5kg" checked>
+                        <label for="weight5kg">5 kg</label>
+
+                        <input type="radio" id="weight30kg" name="packageWeight" value="30kg">
+                        <label for="weight30kg">30 kg</label>
+                    </div>
+                </div>
+
+                <div class="input-group quantity-slider-container">
+                    <label for="quantity-slider">Cantidad de Envíos al Mes:</label>
+                    <input type="range" id="quantity-slider" min="1" max="100" value="1">
+                    <p class="current-quantity-display">Envíos seleccionados: <span id="cantidad">1</span></p>
+                    <p class="cost-per-shipment">Precio por envío: $<span id="precio">172.00</span> MXN</p>
+                    <div class="category-feedback">
+                        <span id="category-name" class="category-esencial">Esencial</span>
+                    </div>
+                </div>
+
+                <div class="results-panel">
+                    <h3>Costo Total Estimado:</h3>
+                    <p class="total-estimated-cost">$<span id="total-cost-value">172.00</span> MXN</p>
+                </div>
+
+                <button class="cta-button">¡Cotizar Ahora!</button>
+            </div>
+        </section>
+        <section class="animation-section">
+            <h2>Envíos PRO en Acción</h2>
+            <div class="truck-animation-container">
+                <img src="img/camion.png" alt="Camión de Envíos" class="envios-truck">
+                <div class="road"></div>
+                <div class="packages">
+                    <div class="package package-1"></div>
+                    <div class="package package-2"></div>
+                    <div class="package package-3"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Envíos PRO. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
