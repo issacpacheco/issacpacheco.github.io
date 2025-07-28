@@ -1,95 +1,512 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/logo.png">
-    <title>Calcula tus Envíos y Ahorra con Envíos PRO</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <title>Cotizador Envios Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        /* Estilos generales del body y centrado del contenido principal */
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content-wrapper {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .card {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .carousel-item img {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .card-header {
+            padding: 0;
+            border-bottom: none;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        /* Estilos personalizados para los botones de kilos (DEFAULT: ROSA/NARANJA) */
+        .btn-kilos {
+            background-color: white;
+            border: 2px solid #FF8C00; /* Borde rosa*/
+            color: #FF8C00; /* Naranja para los números*/
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-kilos:hover {
+            background-color: #FF8C00; /* Rosa claro al pasar el mouse*/
+            color: white;
+            border-color: #660099; /* Borde rosa claro al pasar el mouse*/
+        }
+        .btn-kilos.active { /* Estilo para el botón activo */
+            background-color: #FF8C00; /* Fondo rosa*/
+            color: white;
+            border-color: #660099; /* Borde naranja cuando está activo*/
+        }
 
+        /* NUEVOS ESTILOS para los botones de kilos de Paquetexpress (AZUL #002A52) */
+        .btn-kilos.paquetexpress-style {
+            border: 2px solid #002A52; /* Borde azul oscuro */
+            color: #002A52; /* Número azul oscuro */
+        }
+        .btn-kilos.paquetexpress-style:hover {
+            background-color: #002A52; /* Fondo azul oscuro al pasar el mouse */
+            color: white;
+            border-color: #002A52; /* Borde azul oscuro al pasar el mouse */
+        }
+        .btn-kilos.paquetexpress-style.active {
+            background-color: #002A52; /* Fondo azul oscuro cuando está activo */
+            color: white;
+            border-color: #002A52; /* Borde naranja cuando está activo para Paquetexpress (manteniendo un toque naranja) */
+        }
+
+        /* Ocultar botones de kilos no seleccionados (por defecto, se manejará con JS) */
+        .btn-kilos.hidden {
+            display: none !important;
+        }
+
+        /* Estilos para el input range y su visualización de valor */
+        .range-container {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            background-color: #fefefe;
+        }
+
+        /* Estilos generales para el input range */
+        #enviosRange {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            outline: none;
+            margin: 10px 0;
+            background: #FFC63C; /* Track completo a naranja*/
+            transition: background 0.2s ease; /* Suaviza el cambio de color del track */
+        }
+
+        /* Estilos para el thumb (el círculo/control deslizante) */
+        #enviosRange::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #D30559; /* Thumb a rosa*/
+            cursor: grab;
+            border: 2px solid #F62A8F; /* Borde naranja para el thumb*/
+            margin-top: -8px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        #enviosRange::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #D30559; /* Thumb a rosa*/
+            cursor: grab;
+            border: 2px solid #FF8C00; /* Naranja*/
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        #enviosRange::-ms-thumb { /* Para Edge/IE */
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #D30559; /* Thumb a rosa*/
+            cursor: grab;
+            border: 2px solid #FF8C00; /* Naranja*/
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        #rangeValueDisplay { /* Muestra el número exacto de envíos */
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #D30559; /* Azul marino*/
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        #rangeTextDisplay { /* Muestra el texto del rango (1-10 Envíos) */
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #D30559; /* Azul marino*/
+            margin-top: 0.5rem;
+        }
+        #priceDisplay {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #D30559;
+            margin-top: 0.5rem;
+        }
+
+        /* Estilos para el Encabezado Superior (Header) */
+        .main-header {
+            background-color: #eec3d4; /* Color rosa*/
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-header img {
+            height: 50px; /* Tamaño del logo. Ajusta según sea necesario*/
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+        .main-header span {
+            /* Estilos adicionales para el texto si es necesario */
+        }
+
+        /* Estilos para el Footer */
+        .main-footer {
+            background-color: #D30559; /* Color rosa*/
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            margin-top: auto;
+        }
+        .main-footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .main-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ESTILOS para el botón de Cotizar (rosa) */
+        .btn-cotizar-pink {
+            background-color: #D30559; /* Color rosa de tu marca*/
+            border-color: #D30559;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-cotizar-pink:hover {
+            background-color: #F62A8F; /* Rosa ligeramente más claro o brillante al pasar el mouse*/
+            border-color: #F62A8F;
+            color: white;
+        }
+        .btn-cotizar-pink:disabled {
+            background-color: #E9ECEF;
+            border-color: #E9ECEF;
+            color: #6C757D;
+            cursor: not-allowed;
+        }
+
+        /* ESTILOS PARA LOS BOTONES DE IMAGEN DE PAQUETERÍA (sin borde visible por defecto) */
+        .btn-paqueteria-logo {
+            background-color: transparent; /* Fondo transparente por defecto*/
+            border: 2px solid transparent; /* Borde transparente por defecto*/
+            border-radius: 8px;
+            padding: 5px; /* Menor padding para que el logo ocupe más espacio visible*/
+            margin: 10px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100px; /* Ancho fijo para los botones*/
+            height: 70px; /* Altura fija para los botones*/
+            cursor: pointer;
+            opacity: 0.7; /* Ligeramente transparente por defecto*/
+        }
+        .btn-paqueteria-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        .btn-paqueteria-logo:hover {
+            opacity: 1; /* Opacidad completa al pasar el mouse*/
+            transform: scale(1.05); /* Ligeramente más grande al pasar el mouse*/
+        }
+        .btn-paqueteria-logo.active {
+            opacity: 1; /* Opacidad completa cuando está activo*/
+            border: 2px solid #D30559; /* CAMBIO: Borde rosa cuando está activo*/
+            box-shadow: 0 0 0 0.25rem rgba(211, 5, 89, 0.25); /* Sombra rosa suave*/
+            transform: scale(1.05); /* Mantiene el tamaño ligeramente más grande*/
+        }
+    </style>
+</head>
 <body>
 
-    <header class="header">
-        <div class="logo-container">
-            <img src="img/logo.png" alt="Envíos PRO Logo" class="envios-pro-logo">
-        </div>
-        <h1>Calcula tus Envíos y Ahorra</h1>
-
-        <section class="carousel-section header-carousel">
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="img/1.png" alt="Promoción 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/2.png" alt="Promoción 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/3.png" alt="Promoción 3">
-                    </div>
-                </div>
-                <button class="carousel-nav prev">&lt;</button>
-                <button class="carousel-nav next">&gt;</button>
-            </div>
-        </section>
+    <header class="main-header">
+        <img src="img/logo.png" alt="Envios Pro Logo" class="img-fluid">
+    
     </header>
-
-    <main class="container">
-        <section class="calculator-section">
-            <div class="card">
-                <h2>Tu Cotización FedEx</h2>
-
-                <div class="input-group weight-selection">
-                    <label>Selecciona el Peso del Paquete:</label>
-                    <div class="radio-buttons">
-                        <input type="radio" id="weight5kg" name="packageWeight" value="5kg" checked>
-                        <label for="weight5kg">5 kg</label>
-
-                        <input type="radio" id="weight30kg" name="packageWeight" value="30kg">
-                        <label for="weight30kg">30 kg</label>
+    <div class="main-content-wrapper">
+        <div class="card">
+            <div class="card-header">
+                <div id="imageCarouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#imageCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#imageCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#imageCarouselIndicators" data-bs-slide-to="2" aria-current="true" aria-label="Slide 3"></button>
                     </div>
-                </div>
-
-                <div class="input-group quantity-slider-container">
-                    <label for="quantity-slider">Cantidad de Envíos al Mes:</label>
-                    <input type="range" id="quantity-slider" min="1" max="100" value="1">
-                    <p class="current-quantity-display">Envíos seleccionados: <span id="cantidad">1</span></p>
-                    <p class="cost-per-shipment">Precio por envío: $<span id="precio">172.00</span> MXN</p>
-                    <div class="category-feedback">
-                        <span id="category-name" class="category-esencial">Esencial</span>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/1.png" class="d-block w-100" alt="Envios Pro Banner 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/2.png" class="d-block w-100" alt="Envios Pro Banner 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/3.png" class="d-block w-100" alt="Envios Pro Banner 3">
+                        </div>
                     </div>
-                </div>
-
-                <div class="results-panel">
-                    <h3>Costo Total Estimado:</h3>
-                    <p class="total-estimated-cost">$<span id="total-cost-value">172.00</span> MXN</p>
-                </div>
-
-                <button class="cta-button">¡Cotizar Ahora!</button>
-            </div>
-        </section>
-        <section class="animation-section">
-            <h2>Envíos PRO en Acción</h2>
-            <div class="truck-animation-container">
-                <img src="img/camion.png" alt="Camión de Envíos" class="envios-truck">
-                <div class="road"></div>
-                <div class="packages">
-                    <div class="package package-1"></div>
-                    <div class="package package-2"></div>
-                    <div class="package package-3"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarouselIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarouselIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="card-body text-center">
+                <h5 class="card-title mb-4">Cotiza tu Envío</h5>
+                
+                <form action="https://enviospro.com.mx">
+                    <div class="mb-3">
+                        <h5 class="card-title mt-4 mb-4">Selecciona tu paquetería</h5>
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <button type="button" class="btn-paqueteria-logo" data-paqueteria="fedex">
+                                <img src="img/fedex-logo.png" alt="Logo FedEx">
+                            </button>
+                            <button type="button" class="btn-paqueteria-logo" data-paqueteria="paquetexpress">
+                                <img src="img/paquete-logo.png" alt="Logo Paquetexpress">
+                            </button>
+                            <button type="button" class="btn-paqueteria-logo" data-paqueteria="dhl">
+                                <img src="img/dhl-logo.png" alt="Logo DHL">
+                            </button>
+                        </div>
+                        <input type="hidden" id="paqueteriaSeleccionada" name="paqueteria">
+                    </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 Envíos PRO. Todos los derechos reservados.</p>
+                    <h5 class="card-title mt-4 mb-4">Selecciona el peso de tu Paquete</h5>
+                    <div id="kiloButtonsContainer" class="d-flex justify-content-center flex-wrap">
+                        </div>
+
+                    <input type="hidden" id="pesoSeleccionado" name="peso">
+
+                    <div class="mt-4">
+                        <p class="text-muted">Una vez seleccionado el peso, podrás proceder a cotizar tu envío.</p>
+                    </div>
+
+                    <div class="range-container">
+                        <label for="enviosRange" class="form-label mb-3">
+                            Número de Envíos al Mes: <span id="rangeValueDisplay">1</span>
+                        </label>
+                        <input type="range" class="form-range" id="enviosRange" min="1" max="100" value="1" step="1">
+                        <div id="rangeTextDisplay">1 a 10 Envíos</div> 
+                        <div id="priceDisplay">$172 MXN</div>
+                        <input type="hidden" id="precioPorVolumen" name="precio_volumen">
+                        <input type="hidden" id="cantidadEnvios" name="cantidad_envios">
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button href="https://enviospro.com.mx/" type="submit" class="btn btn-lg btn-cotizar-pink" id="btnCotizar" disabled>Continuar con la Cotización</button>
+                    </div>
+                </form>
+                </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container-fluid">
+            <p>&copy; 2025 Envíos Pro SA de CV. Todos los derechos reservados. | Aviso de privacidad | Términos y condiciones</p>
+            <p>
+                Contacto: <a href="tel:+52 999 781 01839">+52 999 781 0183</a> | 
+                Visítanos en: <a href="https://enviospro.com.mx/" target="_blank">app.enviospro.com</a>
+            </p>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Referencias a elementos del DOM ---
+    const paqueteriaLogoButtons = document.querySelectorAll('.btn-paqueteria-logo');
+    const paqueteriaSeleccionadaInput = document.getElementById('paqueteriaSeleccionada');
+    const kiloButtonsContainer = document.getElementById('kiloButtonsContainer');
+    const pesoSeleccionadoInput = document.getElementById('pesoSeleccionado');
+    const enviosRange = document.getElementById('enviosRange');
+    const rangeValueDisplay = document.getElementById('rangeValueDisplay');
+    const rangeTextDisplay = document.getElementById('rangeTextDisplay');
+    const priceDisplay = document.getElementById('priceDisplay');
+    const precioPorVolumenInput = document.getElementById('precioPorVolumen');
+    const cantidadEnviosInput = document.getElementById('cantidadEnvios');
+    const btnCotizar = document.getElementById('btnCotizar');
 
-    <script src="script.js"></script>
+    // --- Definición de Tarifas ---
+    const tarifas = {
+        'fedex': {
+            '5': { '1-10': 172, '11-50': 132, '51-100': 122 },
+            '30': { '1-10': 230, '11-50': 200, '51-100': 180 }
+        },
+        'paquetexpress': {
+            '20': { '1-10': 280, '11-50': 260, '51-100': 241 },
+            '30': { '1-10': 301, '11-50': 281, '51-100': 260 },
+            '40': { '1-10': 341, '11-50': 321, '51-100': 301 }
+        },
+        'dhl': {
+            '5': { '1-10': 195, '11-50': 155, '51-100': 145 }
+        }
+    };
+
+    // --- Lógica del Botón de Cotizar ---
+    function checkCotizarButton() {
+        const isPaqueteriaSelected = paqueteriaSeleccionadaInput.value !== '';
+        const isPesoSelected = pesoSeleccionadoInput.value !== '';
+        btnCotizar.disabled = !(isPaqueteriaSelected && isPesoSelected);
+    }
+
+    // --- Lógica para generar botones de kilos ---
+    function updateKiloButtons(selectedPaqueteria) {
+        kiloButtonsContainer.innerHTML = '';
+        pesoSeleccionadoInput.value = '';
+
+        if (!selectedPaqueteria || !tarifas.hasOwnProperty(selectedPaqueteria)) {
+            priceDisplay.textContent = '$0 MXN';
+            rangeTextDisplay.textContent = 'Numero de';
+            return;
+        }
+
+        const kilosDisponibles = Object.keys(tarifas[`${selectedPaqueteria}`]);
+        kilosDisponibles.forEach(kilo => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.classList.add('btn', 'btn-kilos');
+            
+            // APLICAR CLASE ESPECÍFICA PARA PAQUETERÍA PARA CAMBIAR COLOR
+            if (selectedPaqueteria === 'paquetexpress') {
+                button.classList.add('paquetexpress-style'); // Añade la clase para el estilo azul
+            }
+
+            button.dataset.kilos = kilo;
+            button.textContent = `${kilo} KG`;
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.btn-kilos').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                pesoSeleccionadoInput.value = this.dataset.kilos;
+                updateRangeAndPriceDisplay();
+                checkCotizarButton();
+            });
+            kiloButtonsContainer.appendChild(button);
+        });
+
+        // Auto-seleccionar el primer peso disponible si no hay uno ya activo
+        if (kiloButtonsContainer.children.length > 0 && !pesoSeleccionadoInput.value) {
+            kiloButtonsContainer.firstChild.click();
+        } else if (pesoSeleccionadoInput.value && !kilosDisponibles.includes(pesoSeleccionadoInput.value)) {
+            pesoSeleccionadoInput.value = '';
+            if (kiloButtonsContainer.children.length > 0) {
+                kiloButtonsContainer.firstChild.click();
+            } else {
+                priceDisplay.textContent = '$0 MXN';
+                rangeTextDisplay.textContent = 'Selecciona peso';
+            }
+        } else if (pesoSeleccionadoInput.value) {
+            updateRangeAndPriceDisplay(); // Asegura que el precio se actualice si el peso ya estaba seleccionado
+        } else {
+            priceDisplay.textContent = '$0 MXN';
+            rangeTextDisplay.textContent = 'Selecciona peso';
+        }
+    }
+
+    // --- Lógica: Selección de Paquetería ---
+    paqueteriaLogoButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            paqueteriaLogoButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            paqueteriaSeleccionadaInput.value = this.dataset.paqueteria;
+            updateKiloButtons(this.dataset.paqueteria);
+            // No es necesario resetear el valor del slider aquí, el usuario puede mantenerlo
+            updateRangeAndPriceDisplay();
+            checkCotizarButton();
+        });
+    });
+
+    // --- Lógica del Range Slider de Envíos y Precios ---
+    function updateRangeAndPriceDisplay() {
+        let envios = parseInt(enviosRange.value);
+        let currentPaqueteria = paqueteriaSeleccionadaInput.value;
+        let currentKilos = pesoSeleccionadoInput.value;
+        let price = 0;
+        let rangeText = "Selecciona opciones";
+
+        rangeValueDisplay.textContent = envios;
+        cantidadEnviosInput.value = envios;
+
+        if (currentPaqueteria && currentKilos && tarifas.hasOwnProperty(currentPaqueteria) && tarifas[`${currentPaqueteria}`].hasOwnProperty(currentKilos)) {
+            const kiloPrices = tarifas[`${currentPaqueteria}`][`${currentKilos}`];
+
+            if (envios >= 1 && envios <= 10) {
+                price = kiloPrices['1-10'];
+                rangeText = "1 a 10 Envíos";
+            } else if (envios >= 11 && envios <= 50) {
+                price = kiloPrices['11-50'];
+                rangeText = "11 a 50 Envíos";
+            } else if (envios >= 51 && envios <= 100) {
+                price = kiloPrices['51-100'];
+                rangeText = "51 a 100 Envíos";
+            }
+        } else if (currentPaqueteria && currentKilos) {
+            price = 0;
+            rangeText = "Tarifa no disponible";
+        } else if (currentPaqueteria) {
+            price = 0;
+            rangeText = "Selecciona peso";
+        } else {
+            price = 0;
+            rangeText = "Selecciona paquetería";
+        }
+
+        rangeTextDisplay.textContent = rangeText;
+        priceDisplay.textContent = `$${price} MXN`;
+        precioPorVolumenInput.value = price;
+
+        // --- Actualización dinámica del fondo del track del slider ---
+        const percentage = ((enviosRange.value - enviosRange.min) / (enviosRange.max - enviosRange.min)) * 100;
+        enviosRange.style.background = `linear-gradient(to right, #D30559 0%, #D30559 ${percentage}%, #FFC63C ${percentage}%, #FFC63C 100%)`;
+    }
+
+    // --- Evento para actualizar el precio al mover el slider ---
+    enviosRange.addEventListener('input', updateRangeAndPriceDisplay);
+
+    // --- Inicialización al cargar la página ---
+    kiloButtonsContainer.innerHTML = '';
+    enviosRange.value = 1;
+    updateRangeAndPriceDisplay();
+    checkCotizarButton();
+});
+
+</script>
 </body>
-
 </html>
