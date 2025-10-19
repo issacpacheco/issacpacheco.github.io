@@ -60,7 +60,7 @@ $(document).ready(function () {
     animateProgressBar('progress5', 90);
     animateProgressBar('progress6', 85);
     animateProgressBar('progress7', 95);
-    animateProgressBar('progress8', 75);
+    animateProgressBar('progress8', 85);
 };
 
 // Función que anima la barra de progreso según el id y el porcentaje
