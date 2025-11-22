@@ -275,6 +275,14 @@ p {
     padding: 2rem 0;
 }
 
+/* Asegura que todos los contenedores de Swiper se vean correctamente */
+.swiper-container {
+    /* Por defecto, debe tomar el ancho completo del contenedor padre */
+    width: 100%; 
+    /* El overflow hidden es crucial para que el contenido del slider no se desborde */
+    overflow: hidden; 
+}
+
 .tech-box img {
     width: 60px;
     height: 60px;
@@ -478,7 +486,7 @@ p {
     background: var(--bg-color);
     padding: 3rem;
     border-radius: 2rem;
-    margin: 2rem;
+    /* margin: 2rem; */
     border: 1px solid var(--border-color);
     user-select: none;
 }
