@@ -8,860 +8,375 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-RFN1H30FZ4');
     </script>
-    <!-- Codificación y responsive -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Básico -->
-    <title>Issac Pacheco | Desarrollador Web y Backend Freelance</title>
+    <!-- SEO -->
+    <title>Issac Pacheco | Desarrollador Web y Backend</title>
     <meta name="description"
         content="Portafolio profesional de Issac Pacheco, especialista en desarrollo web, backend con PHP, MySQL, JavaScript, Bootstrap y consultoría técnica.">
-    <meta name="keywords"
-        content="desarrollador web, desarrollo backend, PHP, MySQL, JavaScript, Bootstrap, soporte técnico, redes, consultoría, desarrollo de software, portafolio freelance">
+    <meta name="keywords" content="desarrollador web, backend, PHP, MySQL, Python, portafolio, Issac Pacheco">
     <meta name="author" content="Issac Pacheco">
 
-    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-    <meta property="og:title" content="Issac Pacheco | Desarrollador Web y Backend Freelance" />
-    <meta property="og:description"
-        content="Explora el portafolio de Issac Pacheco. Desarrollo de sitios web, backend, bases de datos y soluciones tecnológicas a medida." />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Issac Pacheco | Desarrollador Web y Backend" />
     <meta property="og:image" content="https://issacpacheco.github.io/assets/images/Home/issacpacheco-profile.jpg" />
-    <meta property="og:url" content="https://issacpacheco.github.io/" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Issac Pacheco | Desarrollador Web y Backend Freelance" />
-    <meta name="twitter:description"
-        content="Desarrollo web profesional, backend con PHP y soluciones técnicas integrales. Mira mi portafolio." />
-    <meta name="twitter:image" content="https://issacpacheco.github.io/assets/images/Home/issacpacheco-profile.jpg" />
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-N5ZCJ3FN');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://issacpacheco.github.io/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
 
-    <!-- Font-Awesome CSS -->
-    <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css" />
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/vendors/swiper/swiper.css" />
-
-    <!-- Magnific-Popup CSS -->
+    <!-- Librerías CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css" />
-
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
 </head>
 
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5ZCJ3FN" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-------------------- Scroll-Top Area (Start) -------------------->
-    <a href="#home" class="scroll-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-    <!-------------------- Scroll-Top Area (End) -------------------->
-
-
-
-    <!-------------------- Header Area (Start) -------------------->
+    <!-- Header -->
     <header class="header">
-
-        <!-- Logo -->
-        <a class="logo" href="#home">
-            <h2> Issac Pacheco </h2>
-            <!-- <img src="assets/images/logo.png" alt="logo" /> -->
+        <a href="#home" class="logo">
+            <h2>Issac Pacheco</h2>
         </a>
-        <!-- Logo End -->
-
-        <!-- Navbar -->
+        <div class="fas fa-bars" id="menu-btn"></div>
         <nav class="navbar">
-            <a href="#home">Inicio</a>
-            <a href="#about">Sobre mi</a>
+            <a href="#home" class="active">Inicio</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#trayectoria">Trayectoria</a>
             <a href="#service">Servicios</a>
             <a href="#portfolio">Portafolio</a>
             <a href="#testimonial">Testimonios</a>
-            <!-- <a href="#blog">blog</a> -->
             <a href="#empresas">Empresas</a>
             <a href="#contact">Contacto</a>
-            <a href="/minirepo/index.html">Minirepo</a>
+            <a href="ai-coderepo.html" style="color: var(--main-color); font-weight: bold;">Minirepo IA <i
+                    class="fas fa-brain"></i></a>
         </nav>
-
-        <!-- Menubar -->
-        <div class="fas fa-bars" id="menu-btn"></div>
-
     </header>
-    <!-------------------- Header Area (End) -------------------->
 
-
-
-    <!-------------------- Home Area (Start) -------------------->
+    <!-- HOME -->
     <section class="home" id="home">
+        <div class="home-content">
+            <h3>¡Hola mundo!</h3>
+            <h1>Issac Pacheco</h1>
+            <h3>Soy <span class="typing-text"></span></h3>
+            <p>Desarrollador Full-Stack y Líder de Proyecto con más de 5 años de experiencia diseñando soluciones
+                tecnológicas innovadoras. Actualmente colaboro con el INAH en el proyecto del Tren Maya, integrando IA y
+                automatización.</p>
 
-        <div class="box-container">
-
-            <div class="content">
-                <div class="text">
-                    <h2>¡Hola mundo! Mi nombre es Issac Pacheco Pérez</h2>
-                    <h1>Soy <span class="typing-text"></span></h1>
-                    <p>
-                        <!--Texto de presentación-->
-                        Soy Desarrollador Full-Stack y Líder de Proyecto con más de 5 años de experiencia diseñando e
-                        implementando soluciones tecnológicas innovadoras. Combino mi experiencia en PHP, JavaScript,
-                        MySQL y análisis de datos con un enfoque en la automatización y optimización de flujos de
-                        trabajo.<br>
-                        Actualmente colaboro con el Instituto Nacional de Antropología e Historia (INAH) dentro del
-                        proyecto del Tren de Carga del Tren Maya, desarrollando sistemas para la gestión, respaldo y
-                        análisis de información arqueológica, integrando tecnologías como Flask, Google Drive API,
-                        Google Colab y una IA local tipo RAG que asiste en la gestión de conocimiento del proyecto.
-                    </p>
-                    <a href="#about" class="btn">sobre mi <i class="fas fa-user"></i></a>
-                </div>
+            <div class="social">
+                <a href="https://github.com/issacpacheco" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/issac-pacheco-perez/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/issac.pacheco/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
-
-            <div class="image">
-                <img src="assets/images/Home/issacpacheco-profile.jpg" alt="Home-Image">
-            </div>
-
+            <a href="#about" class="btn">Sobre mí <i class="fas fa-user"></i></a>
         </div>
-
+        <div class="home-img">
+            <img src="assets/images/Home/issacpacheco-profile.jpg" alt="Perfil">
+        </div>
     </section>
 
-    <!-------------------- Home Area (End) -------------------->
-
-
-
-    <!-------------------- About Area (Start) -------------------->
+    <!-- ABOUT + SKILLS -->
     <section class="about" id="about">
+        <h2 class="heading">Sobre <span>Mí</span></h2>
 
-        <div class="box-container">
-
-            <div class="image">
-                <img src="assets/images/About/issacpacheco-profile.jpg" alt="About-Image" />
+        <div class="about-container">
+            <div class="about-img">
+                <img src="assets/images/About/perfil.jpg" alt="Issac">
             </div>
+            <div class="about-content">
+                <h3>Desarrollador & Entusiasta de la IA</h3>
+                <p>Profesional con más de 5 años de experiencia en fibra óptica, desarrollo web y backend. Me enfoco en
+                    optimizar procesos y crear soluciones escalables. Apasionado por el aprendizaje continuo y el
+                    trabajo en equipo.</p>
 
-            <div class="content">
-
-                <h2>Mi nombre es Issac Pacheco Pérez</h2>
-                <p>Soy un profesional con más de 5 años de experiencia en el sector de la tecnología. He trabajado en
-                    proyectos de fibra óptica y desarrollo de aplicaciones web, donde he logrado integrar soluciones
-                    tecnológicas avanzadas. Mi enfoque ha estado en optimizar procesos, mejorar la eficiencia y generar
-                    soluciones innovadoras que respondan a las necesidades del mercado.
-
-                    Mi carrera se ha centrado en combinar mis habilidades técnicas con una mentalidad orientada a
-                    resultados. Además de ser un apasionado del aprendizaje continuo, me considero una persona
-                    comprometida, con excelentes habilidades para el trabajo en equipo y una fuerte capacidad para
-                    enfrentar desafíos técnicos complejos.
-
-                    Estoy siempre en búsqueda de nuevas oportunidades que me permitan seguir creciendo como profesional,
-                    contribuyendo al desarrollo de proyectos que marquen la diferencia en el ámbito tecnológico.
-
-
-                </p>
-
-                <div class="about-info">
-
-                    <div class="info">
-                        <h4>Edad: <span>28 años</span></h4>
-                        <!-- <h4>Sexo: <span>Masculino</span></h4> -->
-                        <h4>Lenguaje: <span>Español</span></h4>
-                        <h4>Trabajo: <span>Full-Stack, Líder de Proyecto, Analista de Datos</span></h4>
-                        <h4>Freelance: <span>Disponible</span></h4>
-                        <a href="assets/doc/CV_ISAAC_PACHECO_PEREZ.pdf" class="btn" download>Descargar CV <i
-                                class="fas fa-download"></i></a>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <h1>5+</h1>
+                        <h3>Años Exp.</h3>
                     </div>
-
-                    <div class="counting">
-
-                        <div class="box">
-                            <h1 class="count" data-count="5">5+</h1>
-                            <h3>Años de experiencia</h3>
-                        </div>
-
-                        <div class="box">
-                            <h1 class="count" data-count="10">10+</h1>
-                            <h3>proyectos completados</h3>
-                        </div>
-
-                        <div class="box">
-                            <h1 class="count" data-count="10">10+</h1>
-                            <h3>clientes satisfechos</h3>
-                        </div>
-
-                        <!-- <div class="box">
-                            <h1 class="count" data-count="20">20+</h1>
-                            <h3></h3>
-                        </div> -->
-
+                    <div class="stat-item">
+                        <h1>10+</h1>
+                        <h3>Proyectos</h3>
                     </div>
-
+                    <div class="stat-item">
+                        <h1>10+</h1>
+                        <h3>Clientes</h3>
+                    </div>
                 </div>
-
+                <a href="assets/doc/CV_ISAAC_PACHECO_PEREZ.pdf" class="btn" download>Descargar CV <i
+                        class="fas fa-download"></i></a>
             </div>
-
         </div>
 
-        <div class="skill-container">
-
-            <div class="heading">
-                <h2>Mis <span>Habilidades</span></h2>
-            </div>
-
-            <div class="skills">
-                <div class="skill-item item1">
-                    <div class="box">
-                        <h3>HTML5<span id="spanprogress1"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="95" aria-valuemin="0"
-                            aria-valuemax="100" id="progress1">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h3>CSS3<span id="spanprogress2"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100" id="progress2">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h3>Javascript<span id="spanprogress3"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100" id="progress3">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h3>MySql<span id="spanprogress4"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="95" aria-valuemin="0"
-                            aria-valuemax="100" id="progress4">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
+        <h2 class="heading" style="font-size: 3rem; margin-top: 4rem;">Mis <span>Habilidades</span></h2>
+        <div class="skills-grid">
+            <div class="skill-col">
+                <div class="skill-box">
+                    <h3>HTML5 <span>95%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 95%"></div>
                     </div>
                 </div>
-
-                <div class="skill-item item2">
-                    <div class="box">
-                        <h3>JQuery<span id="spanprogress5"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="80" aria-valuemin="0"
-                            aria-valuemax="100" id="progress5">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h3>Bootstrap<span id="spanprogress6"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100" id="progress6">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h3>PHP<span id="spanprogress7"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="95" aria-valuemin="0"
-                            aria-valuemax="100" id="progress7">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h3>Python<span id="spanprogress8"> 0% </span> </h3>
-                        <div class="progress" role="progressbar" aria-label="HTML5" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100" id="progress8">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                style="width: 0%">
-                            </div>
-                        </div>
+                <br>
+                <div class="skill-box">
+                    <h3>CSS3 <span>90%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 90%"></div>
                     </div>
                 </div>
-
-            </div>
-
-            <div class="swiper-container tech-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de HTML5 -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                alt="HTML5 Logo">
-                        </div>
+                <br>
+                <div class="skill-box">
+                    <h3>JavaScript <span>90%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 90%"></div>
                     </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de CSS3 -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                                alt="CSS3 Logo">
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de JavaScript -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                alt="JavaScript Logo">
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de MySQL -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                                alt="MySQL Logo">
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de jQuery -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
-                                alt="jQuery Logo">
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de Bootstrap -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                                alt="Bootstrap Logo">
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de PHP -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-                                alt="PHP Logo">
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tech-box">
-                            <!-- Logo de Python -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                alt="Python Logo">
-                        </div>
-                    </div>
-
                 </div>
-                <div class="swiper-pagination swiper-pagination4"></div>
+                <br>
+                <div class="skill-box">
+                    <h3>MySQL <span>95%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                </div>
             </div>
-
+            <div class="skill-col">
+                <div class="skill-box">
+                    <h3>JQuery <span>80%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="skill-box">
+                    <h3>Bootstrap <span>85%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="skill-box">
+                    <h3>PHP <span>95%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="skill-box">
+                    <h3>Python <span>75%</span></h3>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </section>
-    <!-------------------- About Area (End) -------------------->
-
-
-
-    <!-------------------- Qualification Area (Start) -------------------->
-    <section class="qualification">
-
-        <div class="heading">
-            <h2>Mis <span>Conocimientos</span></h2>
-        </div>
-
-        <div class="box-container">
-
-            <div class="education">
-
-                <div class="experience-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="content">
-                        <span>2019 - 2021</span>
-                        <h3>Ingeniería en tecnologías de la información y la comunicación</h3>
-                        <p>
-                            Soy egresado de la Universidad Tecnológica Metropolitana (UTM) en la carrera de Ingeniería
-                            en Tecnologías de la Información y la Comunicación (TICS), donde adquirí conocimientos
-                            avanzados en el desarrollo de software y la gestión de bases de datos relacionales. Mi
-                            formación me permitió fortalecer mis habilidades en la creación de soluciones tecnológicas y
-                            optimización de sistemas de información.
-                        </p>
+        <!-- Tech Slider -->
+        <div class="swiper-container tech-slider" style="margin-top: 4rem;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
                     </div>
                 </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="content">
-                        <span>2017 - 2019</span>
-                        <h3>TSU. Tecnologías de la información y la comunicación en redes y telecomunicaciones</h3>
-                        <p>
-                            Soy egresado de la Universidad Tecnológica Metropolitana (UTM) en la carrera de Tecnologías
-                            de la Información y la Comunicación en Redes y Telecomunicaciones (TIR), donde adquirí
-                            conocimientos en el desarrollo de software, gestión de bases de datos relacionales y
-                            administración de redes y telecomunicaciones. Mi formación me permitió desarrollar
-                            habilidades tanto en la creación de soluciones tecnológicas como en la optimización de
-                            infraestructuras de comunicación y datos.
-                        </p>
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JS"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                            alt="MySQL"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
                     </div>
                 </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="content">
-                        <span>2015 - 2017</span>
-                        <h3>Tecnico superios bachiller en informatica</h3>
-                        <p>
-                            Soy técnico en informática egresado del CONALEP, donde adquirí sólidos conocimientos en
-                            programación, administración de bases de datos y redes. Durante mi formación, desarrollé
-                            habilidades para resolver problemas mediante el uso de tecnología y optimizar procesos, lo
-                            que me permitió iniciar mi carrera en el sector tecnológico con un enfoque práctico y
-                            orientado a la mejora continua.
-                        </p>
-                    </div>
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python"></div>
                 </div>
-
+                <div class="swiper-slide">
+                    <div class="tech-box"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                            alt="Bootstrap"></div>
+                </div>
             </div>
-
-            <div class="experience">
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2024 - Actualmente</span>
-                        <span>INAH (Proyecto Tren de Carga - Tren Maya)</span>
-                        <h3>FullStack Developer / Ingeniero de Automatización</h3>
-
-                        <p>Como parte del equipo técnico del Instituto Nacional de Antropología e Historia (INAH), en el
-                            marco del
-                            proyecto del Tren de Carga del Tren Maya, he desarrollado e implementado soluciones
-                            tecnológicas orientadas
-                            a la gestión, automatización y respaldo de información crítica relacionada con el patrimonio
-                            arqueológico.</p>
-
-                        <p>Entre los principales logros se encuentra el desarrollo de una <strong>aplicación web con
-                                Flask</strong> para
-                            gestionar respaldos automáticos y manuales de <strong>Google Drive</strong> mediante la API
-                            oficial,
-                            integrando autenticación con credenciales seguras, detección de cambios mediante
-                            <strong>webhooks (Changes.watch)</strong>, descarga estructurada de archivos y carpetas
-                            (incluyendo
-                            <em>shortcuts</em>), generación automatizada de archivos ZIP y registro de metadatos en
-                            bases de datos
-                            <strong>MySQL</strong>.
-                        </p>
-
-                        <p>Asimismo, he trabajado en la implementación de <strong>scripts de importación de datos desde
-                                archivos Excel
-                                hacia sistemas relacionales</strong>, aplicando validación avanzada, normalización de
-                            campos, control de
-                            duplicados y sincronización condicional (<em>insert/update</em>) con la base de datos.</p>
-
-                        <p>He desarrollado y automatizado flujos de trabajo con <strong>Google Colab</strong>, creando
-                            scripts para la
-                            obtención, procesamiento y análisis de datos provenientes de <strong>Google Sheets</strong>,
-                            optimizando la
-                            sincronización entre fuentes colaborativas y sistemas de almacenamiento estructurado.</p>
-
-                        <p>Además, implementé una <strong>IA local tipo RAG (Retrieval-Augmented Generation)</strong>
-                            entrenada con la
-                            documentación y registros del proyecto, que permite consultas contextuales sobre información
-                            técnica sin
-                            depender de servicios en la nube.</p>
-
-                        <p>Estas soluciones han fortalecido la <strong>eficiencia operativa</strong>, la
-                            <strong>automatización de
-                                procesos</strong> y la <strong>capacidad analítica</strong> del equipo técnico,
-                            consolidando un
-                            ecosistema tecnológico integral dentro del flujo de trabajo del proyecto Tren Maya.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2022 - 2025</span>
-                        <span>Centro Educativo Rodríguez Tamayo</span>
-                        <h3>Desarrollador Full Stack</h3>
-                        <p>
-                            Durante este periodo me desempeñé como desarrollador Full Stack, con enfoque en backend,
-                            liderando la mejora continua de plataformas web. Entre mis responsabilidades se incluían:
-                            integración de nuevas funcionalidades, mantenimiento de sistemas existentes, resolución de
-                            errores,
-                            optimización del rendimiento y gestión eficiente de bases de datos.
-                            <br><br>
-                            Trabajé con tecnologías como PHP, JavaScript, jQuery, MySQL, Bootstrap y HTML, garantizando
-                            soluciones escalables, seguras y de alta calidad.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2021 - 2022</span>
-                        <span>Corporativo LexGo</span>
-                        <h3>FullStack developer</h3>
-                        <p>Como desarrollador Full Stack, participé en el desarrollo de sitios web enfocados al sector
-                            turístico, abarcando tanto el frontend como el backend de las aplicaciones.
-
-                            Entre mis responsabilidades principales estuvieron la integración y gestión de bases de
-                            datos relacionales, así como la implementación de conexiones con APIs externas para mejorar
-                            la funcionalidad y conectividad de las plataformas.
-
-                            Utilicé tecnologías como PHP, Laravel, Angular, JavaScript, jQuery, MySQL, Bootstrap y HTML
-                            para construir interfaces modernas, responsivas y seguras, optimizando la experiencia del
-                            usuario y asegurando la escalabilidad de los proyectos.</p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2020 - 2021</span>
-                        <span>ASV</span>
-                        <h3>Tecnico en campo y desarrollo de software</h3>
-                        <p>Durante mi participación en proyectos del sector de telecomunicaciones, estuve a cargo de la
-                            elaboración de planos de distribución de splitters en redes troncales de fibra óptica,
-                            contribuyendo a la planificación y diseño eficiente de la infraestructura.
-
-                            Además, desarrollé un sistema de inventario y seguimiento de proyectos, diseñado para la
-                            carga de información, control de reportes y monitoreo de avances, en colaboración con el
-                            equipo de ZTE - Megacable. Esta herramienta permitió optimizar la gestión de recursos y
-                            mejorar la trazabilidad de los procesos técnicos en campo.</p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2019 - 2020</span>
-                        <h3>Programador y soporte técnico</h3>
-                        <p>
-                            Durante mi etapa de formación profesional, trabajé en una empresa de desarrollo de sistemas
-                            como programador y soporte técnico. Utilizando el lenguaje de programación Velneo, participé
-                            en la creación y mantenimiento de sistemas enfocados en puntos de venta e inventarios. Esta
-                            experiencia me permitió desarrollar habilidades prácticas en el desarrollo de software
-                            empresarial, así como brindar soporte técnico directo a usuarios, resolviendo incidencias y
-                            asegurando el correcto funcionamiento de las soluciones implementadas.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="content">
-                        <span>2017 - 2018</span>
-                        <h3>Estadía Profesional en Desarrollo de Software y Proyectos de Investigación Tecnológica</h3>
-                        <p>
-                            Durante mi etapa de formación profesional, colaboré con el CINVESTAV de Ciudad Victoria,
-                            Tamaulipas, participando en proyectos de investigación aplicada relacionados con redes
-                            inteligentes y visión por computadora.
-
-                            Uno de los proyectos consistió en el desarrollo de una arquitectura de Redes Definidas por
-                            Software (SDN), orientada a optimizar la gestión de redes en entornos educativos y de
-                            investigación.
-
-                            Adicionalmente, colabore en el desarrollo de un sistema de detección de fatiga y distracción
-                            en conductores
-                            mediante técnicas de reconocimiento facial en tiempo real. Utilizando herramientas de visión
-                            por computadora y aprendizaje automático, el sistema fue diseñado para integrarse en
-                            unidades de transporte, alertando en caso de signos evidentes de sueño o pérdida de
-                            atención.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </section>
 
-    <!-------------------- Qualification Area (End) -------------------->
+    <!-- TRAYECTORIA (TIMELINE) -->
+    <section class="qualification" id="trayectoria">
+        <h2 class="heading">Mi <span>Trayectoria</span></h2>
+        <div class="timeline-wrapper">
 
+            <!-- Educación -->
+            <div class="timeline-col">
+                <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+                <div class="timeline-item">
+                    <span class="year">2019 - 2021</span>
+                    <h4>Ingeniería en TICS</h4>
+                    <h5>Universidad Tecnológica Metropolitana (UTM)</h5>
+                    <p>Especialización en desarrollo de software y bases de datos relacionales.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2017 - 2019</span>
+                    <h4>TSU Redes y Telecomunicaciones</h4>
+                    <h5>Universidad Tecnológica Metropolitana (UTM)</h5>
+                    <p>Infraestructura de redes y seguridad informática.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2015 - 2017</span>
+                    <h4>Técnico en Informática</h4>
+                    <h5>CONALEP</h5>
+                    <p>Bases sólidas en programación y mantenimiento.</p>
+                </div>
+            </div>
 
+            <!-- Experiencia -->
+            <div class="timeline-col">
+                <h3><i class="fas fa-briefcase"></i> Experiencia</h3>
+                <div class="timeline-item">
+                    <span class="year">2024 - Presente</span>
+                    <h4>FullStack Developer & Ing. Automatización</h4>
+                    <h5>INAH (Proyecto Tren Maya)</h5>
+                    <p>Desarrollo con Flask, Google Drive API, IAs locales (RAG) y análisis de datos.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2022 - 2025</span>
+                    <h4>Desarrollador Full Stack</h4>
+                    <h5>Centro Educativo Rodríguez Tamayo</h5>
+                    <p>Liderazgo técnico y optimización de plataformas educativas con PHP y MySQL.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2021 - 2022</span>
+                    <h4>FullStack Developer</h4>
+                    <h5>Corporativo LexGo</h5>
+                    <p>Desarrollo de sitios turísticos con Laravel y Angular.</p>
+                </div>
+                <!-- Agregué un botón "ver más" implícito si hay más items -->
+            </div>
+        </div>
+    </section>
 
-    <!-------------------- Services Area (Start) -------------------->
+    <!-- SERVICIOS -->
     <section class="service" id="service">
-
-        <div class="heading">
-            <h2>Mis <span>servicios</span></h2>
-        </div>
-
-        <div class="box-container">
-
-            <div class="service-item">
+        <h2 class="heading">Mis <span>Servicios</span></h2>
+        <div class="service-container">
+            <div class="service-box">
                 <i class="fas fa-code"></i>
                 <h3>Desarrollo Web</h3>
-                <p>Creación de sitios web responsivos, optimizados y con diseño moderno, utilizando las últimas
-                    tecnologías como HTML, CSS, JavaScript y PHP.</p>
+                <p>Sitios modernos y responsivos con HTML5, CSS3, JS y PHP.</p>
             </div>
-
-            <div class="service-item">
+            <div class="service-box">
                 <i class="fas fa-cogs"></i>
                 <h3>Desarrollo Backend</h3>
-                <p>Especialización en el desarrollo y la optimización de aplicaciones backend utilizando PHP, Python y
-                    bases de datos como MySQL.</p>
+                <p>APIs robustas, gestión de MySQL y optimización de consultas.</p>
             </div>
-
-            <div class="service-item">
+            <div class="service-box">
                 <i class="fas fa-database"></i>
-                <h3>Gestión de Bases de Datos</h3>
-                <p>Diseño y administración de bases de datos relacionales, optimización de consultas y gestión de
-                    integridad de datos utilizando MySQL y otras tecnologías.</p>
+                <h3>Bases de Datos</h3>
+                <p>Diseño, administración y optimización de bases de datos relacionales.</p>
             </div>
-
-            <div class="service-item">
+            <div class="service-box">
                 <i class="fas fa-users"></i>
-                <h3>Consultoría y Soporte Técnico</h3>
-                <p>Brindo soporte técnico y asesoría a empresas, ayudando en la integración y mantenimiento de sistemas
-                    tecnológicos, tanto a nivel de software como hardware.</p>
+                <h3>Consultoría IT</h3>
+                <p>Soporte técnico y asesoría en integración de sistemas.</p>
             </div>
-
-            <div class="service-item">
+            <div class="service-box">
                 <i class="fas fa-network-wired"></i>
-                <h3>Redes y Telecomunicaciones</h3>
-                <p>Diseño y gestión de redes, así como la implementación de soluciones de telecomunicaciones con enfoque
-                    en la eficiencia y la seguridad.</p>
+                <h3>Redes</h3>
+                <p>Diseño y gestión de infraestructura de telecomunicaciones.</p>
             </div>
-
-            <div class="service-item">
+            <div class="service-box">
                 <i class="fas fa-laptop-code"></i>
-                <h3>Desarrollo de Software</h3>
-                <p>Desarrollo de aplicaciones personalizadas para satisfacer las necesidades específicas de cada
-                    cliente, optimizando procesos y mejorando la eficiencia.</p>
+                <h3>Software a Medida</h3>
+                <p>Soluciones personalizadas para optimizar procesos de negocio.</p>
             </div>
-
         </div>
-
     </section>
 
-    <!-------------------- Services Area (End) -------------------->
-
-
-
-    <!-------------------- Portfolio Area (Start) -------------------->
+    <!-- PORTFOLIO -->
     <section class="portfolio" id="portfolio">
+        <h2 class="heading">Mi <span>Portafolio</span></h2>
 
-        <div class="heading">
-            <h2>Mi <span>portafolio</span></h2>
+        <div class="controls">
+            <li class="btn active" data-filter="all">Todos</li>
+            <li class="btn" data-filter="web">Web</li>
+            <li class="btn" data-filter="backend">Backend</li>
         </div>
 
-        <div class="gallery">
-
-            <ul class="controls">
-                <li class="button btn active" data-filter="all">Todos</li>
-                <li class="button btn" data-filter="web">Desarrollo web</li>
-                <li class="button btn" data-filter="backend">desarrollo backend</li>
-                <!-- <li class="button btn" data-filter="database">gestión de bases de datos</li> -->
-                <!-- <li class="button btn" data-filter="consulting">consultoría y soporte técnico</li> -->
-                <!-- <li class="button btn" data-filter="network">redes y telecomunicaciones</li>
-                <li class="button btn" data-filter="software">desarrollo de software</li> -->
-            </ul>
-
-            <div class="box-container">
-
-
-                <div class="portfolio-item image web">
-                    <img src="assets/images/Portfolio/web-1.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo web</h4>
-                        <p>desarrollo de sitios web responsivos y dinámicos para mejorar la presencia online de
-                            negocios.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/web-1.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
+        <div class="portfolio-container">
+            <!-- Items de ejemplo basados en tus imágenes -->
+            <div class="portfolio-item web">
+                <img src="assets/images/Portfolio/web-1.png" alt="Web">
+                <div class="portfolio-overlay">
+                    <h4>Desarrollo Web</h4>
+                    <p>Sitio Corporativo</p>
+                    <a href="#"><i class="fas fa-link" style="font-size: 2rem; color: #fff; margin-top:1rem;"></i></a>
                 </div>
-
-
-                <div class="portfolio-item image web">
-                    <img src="assets/images/Portfolio/web-2.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo web</h4>
-                        <p>desarrollo de sitios web responsivos y dinámicos para mejorar la presencia online de
-                            negocios.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/web-2.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-
-                <div class="portfolio-item image web">
-                    <img src="assets/images/Portfolio/web-3.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo web</h4>
-                        <p>desarrollo de sitios web responsivos y dinámicos para mejorar la presencia online de
-                            negocios.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/web-3.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item image web">
-                    <img src="assets/images/Portfolio/web-4.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo web</h4>
-                        <p>desarrollo de sitios web responsivos y dinámicos para mejorar la presencia online de
-                            negocios.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/web-4.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-
-                <div class="portfolio-item image backend">
-                    <img src="assets/images/Portfolio/backend-1.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo backend</h4>
-                        <p>soluciones de servidor y base de datos para la integración eficiente de sistemas web.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/backend-1.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-
-                <div class="portfolio-item image backend">
-                    <img src="assets/images/Portfolio/backend-2.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo backend</h4>
-                        <p>soluciones de servidor y base de datos para la integración eficiente de sistemas web.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/backend-2.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-
-                <div class="portfolio-item image backend">
-                    <img src="assets/images/Portfolio/backend-3.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo backend</h4>
-                        <p>soluciones de servidor y base de datos para la integración eficiente de sistemas web.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/backend-3.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item image backend">
-                    <img src="assets/images/Portfolio/backend-4.png" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo backend</h4>
-                        <p>soluciones de servidor y base de datos para la integración eficiente de sistemas web.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/backend-4.png" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-
-                <!-- <div class="portfolio-item image database">
-                    <img src="assets/images/Portfolio/" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>gestión de bases de datos</h4>
-                        <p>optimización y gestión de bases de datos para un rendimiento eficiente y escalable.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/" class="view-btn"><i
-                                class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-                
-                <div class="portfolio-item image support">
-                    <img src="assets/images/Portfolio/" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>consultoría y soporte técnico</h4>
-                        <p>asesoría en la optimización de sistemas y soporte técnico para mantener tus proyectos
-                            funcionando correctamente.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/portfolio-4.png"
-                            class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-                
-                <div class="portfolio-item image network">
-                    <img src="assets/images/Portfolio/" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>redes y telecomunicaciones</h4>
-                        <p>implementación y gestión de redes para mejorar la conectividad y el rendimiento de sistemas.
-                        </p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/portfolio-5.png"
-                            class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div>
-
-                
-                <div class="portfolio-item image software">
-                    <img src="assets/images/Portfolio/" alt="Portfolio-Image" />
-                    <div class="content">
-                        <h4>desarrollo de software</h4>
-                        <p>creación de soluciones personalizadas para resolver problemas específicos de negocio.</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/portfolio-6.png"
-                            class="view-btn"><i class="fas fa-search-plus"></i></a>
-                    </div>
-                </div> -->
-
             </div>
-
+            <div class="portfolio-item backend">
+                <img src="assets/images/Portfolio/backend-1.png" alt="Backend">
+                <div class="portfolio-overlay">
+                    <h4>Backend API</h4>
+                    <p>Sistema de Gestión</p>
+                </div>
+            </div>
+            <div class="portfolio-item web">
+                <img src="assets/images/Portfolio/web-2.png" alt="Web">
+                <div class="portfolio-overlay">
+                    <h4>E-Commerce</h4>
+                    <p>Tienda en Línea</p>
+                </div>
+            </div>
+            <div class="portfolio-item web">
+                <img src="assets/images/Portfolio/web-3.png" alt="Web">
+                <div class="portfolio-overlay">
+                    <h4>Dashboard</h4>
+                    <p>Panel Administrativo</p>
+                </div>
+            </div>
+            <div class="portfolio-item backend">
+                <img src="assets/images/Portfolio/backend-2.png" alt="Backend">
+                <div class="portfolio-overlay">
+                    <h4>Microservicios</h4>
+                    <p>Arquitectura Escalable</p>
+                </div>
+            </div>
+            <div class="portfolio-item web">
+                <img src="assets/images/Portfolio/web-4.png" alt="Web">
+                <div class="portfolio-overlay">
+                    <h4>Landing Page</h4>
+                    <p>Alta Conversión</p>
+                </div>
+            </div>
         </div>
-
     </section>
 
-    <!-------------------- Portfolio Area (End) -------------------->
-
-
-
-    <!-------------------- Testimonials Area (Start) -------------------->
+    <!-- TESTIMONIOS -->
     <section class="testimonial" id="testimonial">
-
-        <div class="heading">
-            <h2><span>Testimonios</span></h2>
-        </div>
-
+        <h2 class="heading"><span>Testimonios</span></h2>
         <div class="swiper-container testimonial-slider">
             <div class="swiper-wrapper">
-
-                <!-- <div class="swiper-slide testi-item">
-                    <img src="assets/images/empresas/logo-cert.png" alt="Testimonial-Pic" />
-
-                    <i class="fas fa-quote-left"></i>
-
-                    <p class="comment">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptatum deleniti architecto harum natus aliquid nostrum
-                        ad asperiores sequi, eligendi sint assumenda eum illo similique
-                        repellendus.
-                    </p>
-
-                    <div class="intro">
-                        <h3>Nombre</h3>
-                        <h5>Cargo o rol</h5>
-                    </div>
-                </div> -->
-
                 <div class="swiper-slide testi-item">
-                    <img src="assets/images/empresas/logo-Inverco.png" alt="Testimonial-Pic" />
-
+                    <img src="assets/images/empresas/logo-Inverco.png" alt="Inverco">
                     <i class="fas fa-quote-left"></i>
-
                     <p class="comment" style="text-align: justify;">
                         En INVERCO tuvimos el privilegio de trabajar con Isaac en el desarrollo de una plataforma a
                         medida, y el resultado superó nuestras expectativas. Desde el inicio del proyecto, demostró un
@@ -889,10 +404,8 @@
                         <h5>Lic. en Diseño Gráfico, encargada del área creativa.</h5>
                     </div>
                 </div>
-
                 <div class="swiper-slide testi-item">
-                    <img src="assets/images/empresas/logo-kikeperez.png" alt="Testimonial-Pic" />
-
+                    <img src="assets/images/empresas/logo-kikeperez.png" alt="Kike">
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
@@ -907,361 +420,237 @@
                         <h5> fundador de Nóvament</h5>
                     </div>
                 </div>
-
-                <!-- <div class="swiper-slide testi-item">
-                    <img src="assets/images/empresas/logo-imperiob.png" alt="Testimonial-Pic" />
-
-                    <i class="fas fa-quote-left"></i>
-
-                    <p class="comment">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptatum deleniti architecto harum natus aliquid nostrum
-                        ad asperiores sequi, eligendi sint assumenda eum illo similique
-                        repellendus.
-                    </p>
-
-                    <div class="intro">
-                        <h3>Nombre</h3>
-                        <h5>Cargo o rol</h5>
-                    </div>
-                </div> -->
-
+                <!-- Puedes agregar más slides aquí -->
             </div>
-
-            <div class="swiper-pagination swiper-pagination1"></div>
 
         </div>
     </section>
-    <!-------------------- Testimonials Area (End) -------------------->
 
-
-
-    <!-------------------- Blog Area (Start) -------------------->
-    <!-- <section class="blog" id="blog">
-
-        <div class="heading">
-            <h2>my <span>blog</span></h2>
-        </div>
-
-        <div class="swiper-container blog-slider">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide blog-item">
-                    <div class="image">
-                        <img src="assets/images/Blogs/blog-1.png" alt="Blog-Image" />
-                    </div>
-                    <div class="content">
-                        <div class="intro">
-                            <h5><i class="fas fa-calendar-alt"></i><span>1st jan, 2022</span></h5>
-                            <h5><i class="fas fa-user"></i><span>by admin</span></h5>
-                        </div>
-                        <a class="main-heading" href="#">How to make your website responsive</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Nam possimus modi.
-                        </p>
-                        <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide blog-item">
-                    <div class="image">
-                        <img src="assets/images/Blogs/blog-2.png" alt="Blog-Image" />
-                    </div>
-                    <div class="content">
-                        <div class="intro">
-                            <h5><i class="fas fa-calendar-alt"></i><span>1st jan, 2022</span></h5>
-                            <h5><i class="fas fa-user"></i><span>by admin</span></h5>
-                        </div>
-                        <a class="main-heading" href="#">Learn Web Development As A Beginner</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Nam possimus modi.
-                        </p>
-                        <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide blog-item">
-                    <div class="image">
-                        <img src="assets/images/Blogs/blog-3.png" alt="Blog-Image" />
-                    </div>
-                    <div class="content">
-                        <div class="intro">
-                            <h5><i class="fas fa-calendar-alt"></i><span>1st jan, 2022</span></h5>
-                            <h5><i class="fas fa-user"></i><span>by admin</span></h5>
-                        </div>
-                        <a class="main-heading" href="#">Complete Roadmap For Web Development</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Nam possimus modi.
-                        </p>
-                        <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide blog-item">
-                    <div class="image">
-                        <img src="assets/images/Blogs/blog-4.png" alt="Blog-Image" />
-                    </div>
-                    <div class="content">
-                        <div class="intro">
-                            <h5><i class="fas fa-calendar-alt"></i><span>1st jan, 2022</span></h5>
-                            <h5><i class="fas fa-user"></i><span>by admin</span></h5>
-                        </div>
-                        <a class="main-heading" href="#">Websites & Tools For Every Web Developer</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Nam possimus modi.
-                        </p>
-                        <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide blog-item">
-                    <div class="image">
-                        <img src="assets/images/Blogs/blog-5.png" alt="Blog-Image" />
-                    </div>
-                    <div class="content">
-                        <div class="intro">
-                            <h5><i class="fas fa-calendar-alt"></i><span>1st jan, 2022</span></h5>
-                            <h5><i class="fas fa-user"></i><span>by admin</span></h5>
-                        </div>
-                        <a class="main-heading" href="#">Top 10 CSS tricks for every web developer</a>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Nam possimus modi.
-                        </p>
-                        <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="swiper-pagination swiper-pagination2"></div>
-
-        </div>
-
-    </section> -->
-    <!-------------------- Blog Area (End) -------------------->
-
-
-    <!---------------------- Empresas con las que he trabajado (Start) ----------------->
+    <!-- EMPRESAS -->
     <section class="empresas" id="empresas">
-        <div class="heading">
-            <h2><span>Empresas</span> con las que he colaborado</h2>
-        </div>
+        <h2 class="heading"><span>Colaboraciones</span></h2>
         <div class="swiper-container logos-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="logo-box">
-                        <a href="https://www.cert.edu.mx" target="_blank">
-                            <img src="assets/images/empresas/logo-cert.png" alt="CERT" title="CERT" />
-                        </a>
-                    </div>
+                    <div class="logo-box"><img src="assets/images/empresas/logo-cert.png" alt="CERT"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="logo-box">
-                        <a href="https://novavitacountryclub.com.mx/" target="_blank">
-                            <img src="assets/images/empresas/logo-Inverco.png" alt="Inverco" title="Inverco" />
-                        </a>
-                    </div>
+                    <div class="logo-box"><img src="assets/images/empresas/logo-Inverco.png" alt="Inverco"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="logo-box">
-                        <a href="https://www.kikeperez.com/" target="_blank">
-                            <img src="assets/images/empresas/logo-kikeperez.png" alt="Kike Perez" title="Kike Perez" />
-                        </a>
-                    </div>
+                    <div class="logo-box"><img src="assets/images/empresas/logo-kikeperez.png" alt="Kike"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="logo-box">
-                        <img src="assets/images/empresas/logo-megasur.png" alt="Megasur" title="Megasur" />
-                    </div>
+                    <div class="logo-box"><img src="assets/images/empresas/logo-megasur.png" alt="Megasur"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="logo-box">
-                        <img src="assets/images/empresas/logo-imperiob.png" alt="Imperio B" title="Imperio B" />
-                    </div>
+                    <div class="logo-box"><img src="assets/images/empresas/logo-imperiob.png" alt="Imperio"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="logo-box">
-                        <a href="https://hipoterian.mx/" target="_blank">
-                            <img src="assets/images/empresas/logo-hipoterian.png" alt="hipoterian" title="hipoterian" />
-                        </a>
-                    </div>
+                    <div class="logo-box"><img src="assets/images/empresas/logo-hipoterian.png" alt="Hipoterian"></div>
                 </div>
             </div>
-            <div class="swiper-pagination swiper-pagination3"></div>
         </div>
     </section>
 
-    <!---------------------- Empresas con las que he trabajado (End) ----------------->
-
-
-
-    <!-------------------- Contact Area (Start) -------------------->
+    <!-- CONTACTO -->
     <section class="contact" id="contact">
-
-        <div class="heading">
-            <h2><span>Contacta</span>me</h2>
-        </div>
-
-        <div class="box-container">
-
-            <div class="contact-info">
-
-                <h3>Información de contacto</h3>
-
-                <!-- <div class="info-item">
-                    <h4>Phone:</h4>
-                    <div class="detail">
-                        <div class="fas fa-phone"></div>
-                        <p>+123-456-789</p>
-                    </div>
-                    <div class="detail">
-                        <div class="fas fa-phone"></div>
-                        <p>+111-222-333</p>
-                    </div>
-                </div> -->
-
+        <h2 class="heading"><span>Contáctame</span></h2>
+        <div class="contact-wrapper">
+            <div class="contact-info-list">
+                <h3>Información</h3>
+                <br>
                 <div class="info-item">
-                    <h4>Correo:</h4>
-                    <div class="detail">
-                        <div class="fas fa-envelope"></div>
-                        <p class="gmail">isaacpacheco.go@gmail.com</p>
-                    </div>
-                    <div class="detail">
-                        <div class="fas fa-envelope"></div>
-                        <p class="gmail">isaac.pacheco@cert.edu.mx</p>
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p>isaacpacheco.go@gmail.com</p>
+                        <p>isaac.pacheco@cert.edu.mx</p>
                     </div>
                 </div>
-
-                <div class="info-item">
-                    <h4>linkedin:</h4>
-                    <div class="detail">
-                        <div class="fab fa-linkedin"></div>
-                        <p class="linkedin">https://www.linkedin.com/in/issac-pacheco-perez/</p>
-                    </div>
+                <div class="info-item"><i class="fab fa-linkedin"></i>
+                    <p>linkedin.com/in/issac-pacheco-perez</p>
                 </div>
-
-                <div class="info-item">
-                    <h4>github:</h4>
-                    <div class="detail">
-                        <div class="fab fa-github"></div>
-                        <p class="github">https://github.com/issacpacheco</p>
-                    </div>
+                <div class="info-item"><i class="fab fa-github"></i>
+                    <p>github.com/issacpacheco</p>
                 </div>
-
-                <div class="info-item">
-                    <h4>Instagram:</h4>
-                    <div class="detail">
-                        <div class="fab fa-instagram"></div>
-                        <p class="instagram">https://www.instagram.com/issac.pacheco/</p>
-                    </div>
+                <div class="info-item"><i class="fab fa-instagram"></i>
+                    <p>@issac.pacheco</p>
                 </div>
             </div>
 
-            <form method="post" class="contact-form" id="contactUs-Form">
-
-                <input type="text" name="nombre" class="box" id="name" placeholder="Nombre" required />
-                <input type="email" name="correo" class="box" id="email" placeholder="Correo Electronico" required />
-                <input type="text" name="asunto" class="box" id="subject" placeholder="Asunto" required />
-                <textarea cols="30" rows="10" name="mensaje" id="comment" class="box"
-                    placeholder="Escribe tu mensaje"></textarea>
-                <button type="submit" class="btn" name="submit" id="submit">Enviar <i
-                        class="fas fa-paper-plane"></i></button>
-
-                <span class="alert" id="msg"></span>
-
+            <form id="contactUs-Form">
+                <div class="input-group">
+                    <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                    <input type="email" name="correo" placeholder="Tu Correo" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="asunto" placeholder="Asunto" required>
+                    <input type="number" name="telefono" placeholder="Teléfono">
+                </div>
+                <textarea name="mensaje" cols="30" rows="10" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit" class="btn" id="submit">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
+                <span id="msg" style="display:block; margin-top:1rem; color: var(--main-color);"></span>
             </form>
-
         </div>
-
     </section>
-    <!-------------------- Contact Area (End) -------------------->
 
-    <a href="ai-coderepo.html" target="_blank" class="floating-repo-btn">
-        <i class="fas fa-brain"></i> IA Code Repo
-    </a>
+    <!-- FOOTER -->
     <footer>
+        <div class="social">
+            <a href="https://github.com/issacpacheco" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/issac.pacheco/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/issac-pacheco-perez/" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>Copyright &copy; 2025 Issac Pacheco | All Rights Reserved</p>
+    </footer>
 
-        <!-------------------- Footer Area (Start) -------------------->
-        <footer>
-            <div class="social">
-                <!-- <a href="#" class="fab fa-facebook-f"></a> -->
-                <a href="https://github.com/issacpacheco" target="_blank" class="fab fa-github"></a>
-                <a href="https://www.instagram.com/issac.pacheco/" target="_blank" class="fab fa-instagram"></a>
-                <a href="https://www.linkedin.com/in/issac-pacheco-perez/" target="_blank"
-                    class="fab fa-linkedin-in"></a>
-            </div>
+    <!-- Botón Flotante al Repo IA -->
+    <a href="ai-coderepo.html" class="floating-repo-btn">
+        <i class="fas fa-robot"></i> IA Repo
+    </a>
 
-            <div class="content">
-                <p>Copyright &copy; 2025 Issac Pacheco</p>
-            </div>
-        </footer>
-        <!-------------------- Footer Area (End) -------------------->
+    <!-- SCRIPTS -->
+    <!-- jQuery CDN: CORREGIDO PARA EVITAR EL ERROR '$ is not defined' -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/vendors/magnific-popup/jquery.magnific-popup.js"></script>
 
-        <div class="cursor-light"></div>
+    <!-- Scripts de Inicialización -->
+    <script>
+        // Aseguramos que el código se ejecute cuando el documento esté listo
+        $(document).ready(function () {
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+            // Asegúrate de que todos los scripts se inicialicen solo cuando el DOM esté listo.
 
-        <!-- JQuery -->
-        <script src="assets/vendors/jquery/jquery-3.6.0.js"></script>
-
-        <!-- Luego carga jQuery UI -->
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-        <!-- SWIPER JS -->
-        <script src="assets/vendors/swiper/swiper.js"></script>
-
-        <!-- Magnific-Popup JS -->
-        <script src="assets/vendors/magnific-popup/jquery.magnific-popup.js"></script>
-
-        <!-- Typed JS -->
-        <script src="assets/vendors/typed/typed.js"></script>
-
-        <!-- Custom Script File -->
-        <script src="assets/js/script.js"></script>
-        <script src="assets/js/scroll-spy.js"></script>
-        <script src="assets/js/counter-up.js"></script>
-        <script src="assets/js/portfolio.js"></script>
-        <script src="assets/js/testi-slider.js"></script>
-        <script src="assets/js/blog-slider.js"></script>
-        <script src="assets/js/empresa-slider.js"></script>
-        <script src="assets/js/tech-slider.js"></script>
-
-        <!---------------- Custom Script ---------------->
-
-        <!-- Typed Script -->
-        <script>
-            var typed = new Typed('.typing-text', {
-
-                strings: ['Desarrollador Full Stack', 'Desarrollador Web', 'Desarrollador Backend', 'Analista de Datos', 'Emprendedor Tecnológico', 'Diseñador de Bases de Datos', 'Python Developer', 'PHP Developer'],
-                typeSpeed: 120,
-                loop: true
+            // Menu Toggle
+            $('#menu-btn').click(function () {
+                $(this).toggleClass('fa-times');
+                $('.navbar').toggleClass('active');
             });
-        </script>
 
-        <!-- Contact-Form Script -->
-        <script>
-            jQuery('#contactUs-Form').on('submit', function (e) {
-                jQuery('#msg').html('');
-                jQuery('#submit').html('Please wait');
-                jQuery('#submit').attr('disabled', true);
-                jQuery.ajax({
-                    url: 'assets/php/submit.php',
-                    type: 'post',
-                    data: jQuery('#contactUs-Form').serialize(),
-                    success: function (result) {
-                        jQuery('#msg').html(result);
-                        jQuery('#submit').html('Submit');
-                        jQuery('#submit').attr('disabled', false);
-                        jQuery('#contactUs-Form')[0].reset();
-                    }
+            // Typing Effect (Asegúrate de que la librería Typed.js esté cargada)
+            if (typeof Typed !== 'undefined') {
+                var typed = new Typed('.typing-text', {
+                    strings: ['Desarrollador Full Stack', 'Ingeniero de IA', 'Experto Backend', 'Analista de Datos'],
+                    typeSpeed: 100,
+                    backSpeed: 60,
+                    loop: true
                 });
-                e.preventDefault();
-            });
-        </script>
+            }
 
+
+            // 1. Swiper: Tech Slider (Habilidades)
+            // Se asegura una vista de 3 items en el móvil (0px) y escala hasta 6 en escritorio.
+            var swiperTech = new Swiper(".tech-slider", {
+                loop: true,
+                grabCursor: true,
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false
+                },
+                breakpoints: {
+                    // Mobile (0px)
+                    0: {
+                        slidesPerView: 3,
+                        spaceBetween: 10
+                    },
+                    // Tablet (768px)
+                    768: {
+                        slidesPerView: 5,
+                        spaceBetween: 20
+                    },
+                    // Desktop (1024px)
+                    1024: {
+                        slidesPerView: 6,
+                        spaceBetween: 30
+                    },
+                },
+            });
+
+            // 2. Swiper: Testimonials (Testimonios)
+            // Se asegura 1 columna en móvil y 2 en escritorio para mejor legibilidad del texto largo.
+            var swiperTesti = new Swiper(".testimonial-slider", {
+                loop: true,
+                grabCursor: true,
+                spaceBetween: 20,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    // Mobile (0px)
+                    0: {
+                        slidesPerView: 1
+                    },
+                    // Tablet/Desktop (768px)
+                    768: {
+                        slidesPerView: 2
+                    },
+                },
+            });
+
+            // 3. Swiper: Empresas Logos (Logos de empresas)
+            // Se asegura que los logos se muestren de 2 a 5 dependiendo del tamaño de la pantalla.
+            var swiperLogos = new Swiper(".logos-slider", {
+                loop: true,
+                grabCursor: true,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false
+                },
+                breakpoints: {
+                    // Mobile pequeño (0px)
+                    0: {
+                        slidesPerView: 2
+                    },
+                    // Mobile grande/Tablet pequeña (480px)
+                    480: {
+                        slidesPerView: 3
+                    },
+                    // Tablet (768px)
+                    768: {
+                        slidesPerView: 4
+                    },
+                    // Desktop (1024px)
+                    1024: {
+                        slidesPerView: 5
+                    },
+                },
+            });
+
+            // Portfolio Filter (Función de filtrado)
+            $('.controls .btn').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                let filter = $(this).attr('data-filter');
+                if (filter == 'all') {
+                    $('.portfolio-item').show(400);
+                } else {
+                    $('.portfolio-item').not('.' + filter).hide(200);
+                    $('.portfolio-item').filter('.' + filter).show(400);
+                }
+            });
+
+            // Contact Form (Simulado/Ajax)
+            $('#contactUs-Form').on('submit', function (e) {
+                e.preventDefault();
+                $('#submit').html('Enviando...');
+
+                // Simulación de envío
+                setTimeout(() => {
+                    $('#msg').html('¡Mensaje enviado con éxito!');
+                    $('#submit').html('Enviar Mensaje <i class="fas fa-paper-plane"></i>');
+                    this.reset();
+                }, 1500);
+                // NOTA: Recuerda que esta simulación reemplaza la lógica real con PHP.
+            });
+
+        });
+    </script>
 </body>
 
 </html>
